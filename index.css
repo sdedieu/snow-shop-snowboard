@@ -1,0 +1,243 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  .breadcrumb {
+    @apply flex flex-row my-8;
+  }
+
+  .size-card {
+    @apply py-4 bg-gray-100 border border-transparent hover:border-green-special rounded-md text-center hover:text-green-special w-16 mx-1 cursor-pointer transition-all duration-300 ease-in-out;
+  }
+
+  .size-card.selected {
+    @apply bg-green-special text-white;
+  }
+
+  .card__collection {
+    @apply grid grid-flow-row grid-cols-4 gap-4;
+  }
+
+  .cards {
+    @apply bg-cover rounded-md overflow-hidden bg-center relative z-10;
+  }
+
+  .cards:hover .cards__rect-2:before {
+    @apply -left-full;
+  }
+
+  .cards:hover .cards__circle {
+    @apply scale-100;
+  }
+
+  .cards:hover .cards__circle:before {
+    @apply scale-90;
+  }
+
+  .cards:hover .cards__list li {
+    @apply translate-x-0;
+  }
+
+  .cards__rect-1 {
+    @apply bg-white block absolute -left-full z-10 opacity-90 transition-all duration-500 ease-in-out;
+  }
+
+  .cards__rect-1 .shadow-1 p {
+    @apply text-lg text-white leading-8;
+  }
+
+  .cards__rect-1 .shadow-1 {
+    @apply block absolute transition-all flex justify-center items-center font-mono font-bold duration-300 ease-in-out;
+  }
+
+  .cards__rect-2 {
+    @apply bg-white absolute opacity-90 z-10 transition-all duration-500 ease-in-out;
+  }
+
+  .cards__rect-2::before {
+    @apply block absolute opacity-100 transition-all duration-300 ease-in-out;
+  }
+
+  .cards__rect-2::after {
+    @apply block absolute opacity-100 transition-all duration-500 ease-in-out delay-200;
+  }
+
+  .cards__rect-2 .shadow-2 {
+    @apply block absolute w-full h-full flex justify-center items-center text-white text-2xl font-mono font-bold transition-all duration-500 ease-in-out delay-200;
+  }
+
+  .cards__rect-3 {
+    @apply bg-white block absolute left-full z-10 opacity-90 transition-all duration-500 ease-in-out;
+  }
+
+  .cards__rect-3 .shadow-1 p {
+    @apply text-2xl text-white leading-8 font-mono font-bold;
+  }
+
+  .cards__rect-3 .shadow-1 {
+    @apply block absolute flex justify-start pl-5 items-center transition-all duration-300 ease-in-out;
+  }
+
+  .cards__circle {
+    @apply absolute bg-white text-white opacity-90 transition-all duration-300 ease-in-out;
+  }
+
+  .cards__rect-4 {
+    @apply bg-white absolute opacity-90 z-10 transition-all duration-500 ease-in-out;
+  }
+
+  .cards__rect-4::before {
+    @apply block absolute opacity-100 transition-all duration-300 ease-in-out;
+  }
+
+  .cards__rect-4 .shadow-2 {
+    @apply block absolute w-full h-full flex justify-center items-center text-white  font-mono font-bold transition-all duration-500 ease-in-out delay-200;
+  }
+
+  .cards__list {
+    @apply list-none absolute transition-all duration-400 ease-in-out;
+  }
+
+  .cards__list li {
+    @apply inline-block text-white text-center font-black transition-all duration-300 ease-in-out;
+  }
+
+  .cards__list li:nth-child(1) {
+    @apply transition delay-200;
+  }
+  .cards__list li:nth-child(2) {
+    @apply transition delay-300;
+  }
+  .cards__list li:nth-child(3) {
+    @apply transition delay-400;
+  }
+}
+
+.cards:hover .cards__rect-1 {
+  left: 10%;
+}
+.cards:hover .cards__rect-1 .shadow-1 {
+  left: -20%;
+}
+.cards:hover .cards__rect-2 {
+  left: 60%;
+}
+.cards:hover .cards__rect-2:after {
+  left: 80%;
+}
+.cards:hover .cards__rect-2 .shadow-2 {
+  left: -10%;
+}
+
+.cards:hover .cards__rect-3 {
+  left: 60%;
+}
+
+.cards:hover .cards__rect-3 .shadow-1 {
+  left: -5%;
+}
+
+.cards:hover .cards__rect-4 {
+  left: 40%;
+}
+
+.cards:hover .cards__rect-4 .shadow-2 {
+  left: -10%;
+}
+
+.cards__rect-1 {
+  width: 200px;
+  height: 110px;
+  transform: skewX(-20deg);
+  top: 73%;
+}
+
+.cards__rect-1 p {
+  transform: skewX(20deg);
+}
+
+.cards__rect-1 .shadow-1 {
+  background: #9b1308;
+  width: 230px;
+  height: 100px;
+  left: -200%;
+  z-index: -1;
+}
+
+.cards__rect-2 {
+  width: 100px;
+  height: 70px;
+  top: 65%;
+  left: 1000%;
+  transform: skewX(-20deg);
+}
+
+.cards__rect-2::before {
+  content: "";
+  width: 50px;
+  height: 40px;
+  background: #57ccfd;
+  left: 500%;
+  top: 10%;
+}
+
+.cards__rect-2::after {
+  content: "";
+  width: 50px;
+  height: 40px;
+  background: #9b1308;
+  left: 500%;
+  top: 114%;
+}
+
+.cards__rect-2 .shadow-2 {
+  background: #57ccfd;
+  top: -10%;
+  left: 500%;
+}
+
+.cards__rect-3 {
+  width: 180px;
+  height: 65px;
+  left: 500%;
+  transform: skewX(-20deg);
+  top: 7%;
+}
+
+.cards__rect-3 .shadow-1 {
+  background: #9b1308;
+  width: 230px;
+  height: 60px;
+  top: -10%;
+  left: 500%;
+  z-index: -1;
+}
+
+.cards__rect-4 {
+  width: 100px;
+  height: 40px;
+  top: 17%;
+  left: -1000%;
+  transform: skewX(-20deg);
+}
+
+.cards__rect-4::before {
+  content: "";
+  width: 50px;
+  height: 40px;
+  background: #57ccfd;
+  left: -500%;
+  top: 10%;
+}
+
+.cards__rect-4 .shadow-2 {
+  background: #57ccfd;
+  padding: 0 16px 0 16px;
+  top: -10%;
+  left: -500%;
+}
+
+.cards__rect-4 .shadow-2 p {
+  transform: skewX(20deg);
+}
