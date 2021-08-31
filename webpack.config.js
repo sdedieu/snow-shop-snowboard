@@ -16,6 +16,12 @@ module.exports = (options) => {
     module: {
       rules: [
         {
+          test: /\.(jpg|png)$/,
+          use: {
+            loader: 'url-loader',
+          },
+        },
+        {
           test: /\.html$/,
           use: [
             {

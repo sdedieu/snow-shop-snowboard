@@ -35,7 +35,7 @@
     </div>
     <div class="card__collection clear-fix pt-8">
         <div class="cards cursor-pointer" ng-repeat="(key, item) in vm.items" ng-click="vm.navigateTo('/snowboard/' + item.id)" >
-           <img ng-src="{{'assets/img/' + item.img + '.jpg'}}" class="w-full h-auto" alt=""> 
+           <img ng-src="{{item.img}}" class="w-full h-auto" alt=""> 
             <span class="cards__rect-1">
                 <span class="shadow-1">
                     <p>{{item.label}}</p>

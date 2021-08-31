@@ -36,4 +36,4 @@ export class MfeAngularJs extends HTMLElement {
   }
 }
 
-customElements.define('angularjs-element', MfeAngularJs);
+customElements.define('snowboard-page-element', MfeAngularJs);
