@@ -22,7 +22,7 @@ angular.module('app', [
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/snowboard'});
+  $routeProvider.otherwise({redirectTo: '/items'});
 }]);
 
 // Note: You can also wrap a controller or a directive 

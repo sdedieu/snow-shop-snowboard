@@ -6,7 +6,7 @@
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                 clip-rule="evenodd" />
         </svg>
-        <a ng-click="vm.navigateTo('/snowboard')" class="px-2">Snowboard</a>
+        <a ng-click="vm.navigateTo('/')" class="px-2">Snowboard</a>
     </div>
     <h1 class="px-2 py-1 mb-8 text-4xl font-black">Snowboard</h1>
     <div
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="card__collection clear-fix pt-8">
-        <div class="cards cursor-pointer" ng-repeat="(key, item) in vm.items" ng-click="vm.navigateTo('/snowboard/' + item.id)" >
+        <div class="cards cursor-pointer" ng-repeat="(key, item) in vm.items" ng-click="vm.navigateTo('/items/' + item.id)" >
            <img ng-src="{{item.img}}" class="w-full h-auto" alt=""> 
             <span class="cards__rect-1">
                 <span class="shadow-1">

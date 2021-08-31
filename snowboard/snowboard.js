@@ -12,7 +12,7 @@ angular
   .config([
     "$routeProvider",
     function ($routeProvider) {
-      $routeProvider.when("/snowboard", {
+      $routeProvider.when('/items', {
         template: snowboardTemplate,
         controller: "SnowboardCtrl",
         controllerAs: "vm",

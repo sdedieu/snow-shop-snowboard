@@ -1,11 +1,12 @@
 'use strict';
 
 import snowboardDetailsTemplate from './snowboard-details.html';
+import Colin from "../assets/img/colin-lloyd-DvIYbNCZAns-unsplash.jpg";
 
 angular.module('app.snowboardDetails', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/snowboard/:id', {
+  $routeProvider.when('/items/:id', {
     template: snowboardDetailsTemplate,
     controller: 'SnowboardDetailsCtrl',
     controllerAs: 'vm'
@@ -13,7 +14,7 @@ angular.module('app.snowboardDetails', ['ngRoute'])
 }])
 
 .controller('SnowboardDetailsCtrl', ['$location', function($location) {
-  this.item = {id: 1, img: 'colin-lloyd-DvIYbNCZAns-unsplash', label: 'Buckshot rocks', price: 240}
+  this.item = {id: 1, img: Colin, label: 'Buckshot rocks', price: 240}
   this.sizes = [{ id: 1, label: 'XS' },
   { id: 2, label: 'S' },
   { id: 3, label: 'M' },
