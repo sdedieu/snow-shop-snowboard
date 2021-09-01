@@ -66,7 +66,7 @@ module.exports = (options) => {
         library: { type: "var", name: "snowboard" },
         filename: "remoteEntry.js",
         exposes: {
-          "./SnowBoardModule": "./app.js",
+          "./Module": "./app.js",
         },
 
         shared: ["react", "react-dom"],
