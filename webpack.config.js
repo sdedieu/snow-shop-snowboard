@@ -1,5 +1,4 @@
 const htmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = (options) => {
@@ -64,14 +63,7 @@ module.exports = (options) => {
       new htmlWebpackPlugin({
          template: path.resolve(__dirname, "public", "index.html"),
          favicon: "./public/favicon.ico",
-       }),
-       new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: "./**/*.html",
-          },
-        ],
-      })
+       })
     ],
     devServer: {
       port: 4204,
