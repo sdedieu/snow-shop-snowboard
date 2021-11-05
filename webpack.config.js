@@ -1,9 +1,10 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const htmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
 module.exports = (options) => {
   return {
-    entry: "./index.js",
+    entry: "./src/index.js",
     output: {
       filename: "bundle.js",
       publicPath: "auto",
@@ -60,24 +61,17 @@ module.exports = (options) => {
       ],
     },
     plugins: [
-      new ModuleFederationPlugin({
-        // For remotes (please adjust)
-        name: "snowboard",
-        library: { type: "var", name: "snowboard" },
-        filename: "remoteEntry.js",
-        exposes: {
-          "./Module": "./app.js",
-        },
-
-        shared: ["react", "react-dom"],
-      }),
-      new CopyWebpackPlugin({
+      new htmlWebpackPlugin({
+         template: path.resolve(__dirname, "public", "index.html"),
+         favicon: "./public/favicon.ico",
+       }),
+       new CopyWebpackPlugin({
         patterns: [
           {
             from: "./**/*.html",
           },
         ],
-      }),
+      })
     ],
     devServer: {
       port: 4204,
