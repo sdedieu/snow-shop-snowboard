@@ -1,3 +1,4 @@
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
@@ -60,25 +61,15 @@ module.exports = (options) => {
       ],
     },
     plugins: [
-      new htmlWebpackPlugin({
-        template: path.resolve(__dirname, "public", "index.html"),
-        favicon: "./public/favicon.ico",
-      }),
-      /*
       new ModuleFederationPlugin({
         // For remotes (please adjust)
         name: "mfe",
         library: { type: "var", name: "mfe" },
         filename: "remoteEntry.js",
         exposes: {
-          "./module": ".//src/main.js",
+          "./module": ".//src/app.js",
         },
-        shared: share({
-          // Shared libs goes there
-          ...sharedMappings.getDescriptors(),
-        }),
       }),
-      */
     ],
     devServer: {
       port: 4204,

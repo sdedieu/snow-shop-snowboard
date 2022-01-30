@@ -31,12 +31,12 @@ angular
 /*
 export class Mfe extends HTMLElement {
   connectedCallBack() {
-    const root = document.createElement("mfe-component");
+    const root = document.createElement("app");
     this.appendChild(root);
     angular.bootstrap(root, ["app"]);
   }
 }
-customElements.define("mfe-web-component", Mfe);
+customElements.define("snowboard-web-component", Mfe);
 */
 
 // Note: You can also wrap a controller or a directive
