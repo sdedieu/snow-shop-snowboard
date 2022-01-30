@@ -18,7 +18,7 @@ module.exports = (options) => {
         {
           test: /\.(jpg|png)$/,
           use: {
-            loader: 'url-loader',
+            loader: "url-loader",
           },
         },
         {
@@ -45,8 +45,8 @@ module.exports = (options) => {
         {
           test: /\.(sass|css|scss)$/,
           use: [
-            'style-loader',
-          'css-loader',
+            "style-loader",
+            "css-loader",
             {
               loader: "postcss-loader",
               options: {
@@ -61,9 +61,24 @@ module.exports = (options) => {
     },
     plugins: [
       new htmlWebpackPlugin({
-         template: path.resolve(__dirname, "public", "index.html"),
-         favicon: "./public/favicon.ico",
-       })
+        template: path.resolve(__dirname, "public", "index.html"),
+        favicon: "./public/favicon.ico",
+      }),
+      /*
+      new ModuleFederationPlugin({
+        // For remotes (please adjust)
+        name: "mfe",
+        library: { type: "var", name: "mfe" },
+        filename: "remoteEntry.js",
+        exposes: {
+          "./module": ".//src/main.js",
+        },
+        shared: share({
+          // Shared libs goes there
+          ...sharedMappings.getDescriptors(),
+        }),
+      }),
+      */
     ],
     devServer: {
       port: 4204,
