@@ -61,13 +61,17 @@ module.exports = (options) => {
       ],
     },
     plugins: [
+      new htmlWebpackPlugin({
+        template: path.resolve(__dirname, "public", "index.html"),
+        favicon: "./public/favicon.ico",
+      }),
       new ModuleFederationPlugin({
         // For remotes (please adjust)
-        name: "mfe",
-        library: { type: "var", name: "mfe" },
+        name: "snowboard",
+        library: { type: "var", name: "snowboard" },
         filename: "remoteEntry.js",
         exposes: {
-          "./module": ".//src/app.js",
+          "./module": ".//src/index.js",
         },
       }),
     ],
