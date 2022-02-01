@@ -27,14 +27,3 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
 // Note: You can also wrap a controller or a directive 
 // in a Custom Element!
-
-
-export class MfeAngularJs extends HTMLElement {
-  connectedCallback() {
-    const root = document.createElement('app');
-    this.appendChild(root);
-    angular.bootstrap(root, ['app']);
-  }
-}
-
-customElements.define('snowboard-web-component', MfeAngularJs);
